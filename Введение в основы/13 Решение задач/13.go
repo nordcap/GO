@@ -8,11 +8,20 @@ package main
 
 import "fmt"
 
-func main()  {
+func main() {
 	var a int
 	fmt.Scan(&a)
-
-
+	fib := []int{0, 1}
+	for i := 2; ; i++ {
+		fib = append(fib, fib[i-2]+fib[i-1])
+		if a == fib[i] {
+			fmt.Println(i)
+			break
+		}
+		if a < fib[i] {
+			fmt.Println(-1)
+			break
+		}
+	}
 
 }
-
